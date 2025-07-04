@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A* Pathfinding Visualizer</title>
+  <link rel="stylesheet" href="apath.css">
+</head>
+<body>
+  <header>
+    <h3>A* Pathfinder</h3>
+    <button onclick="startPathfinding()">Start Pathfinding</button>
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeToggle">
+      <p>Dark Mode</p>
+    </label>
+  </header>
+
+  <section class="controls">
+    <label>Rows: <input type="number" id="rowsInput" value="20" min="5" max="50"></label>
+    <label>Cols: <input type="number" id="colsInput" value="20" min="5" max="50"></label>
+    <label><input type="checkbox" id="diagonalToggle"> Diagonal Movement</label>
+    <button onclick="generateGrid()">Generate Grid</button>
+  </section>
+
+  <main id="grid"></main>
+
+  <section class="slider-control">
+    <label for="wallDensity">Wall Density: <span id="densityValue">10</span>%</label>
+    <input type="range" id="wallDensity" min="0" max="100" value="25">
+  </section>
+
+
+  <section class="buttons">
+    <button onclick="addRandomWalls()">Random Walls</button>
+    <button onclick="eraseWalls()">Erase Walls</button>
+    <button id="reset" onclick="resetGrid()">Reset</button>
+  </section>
+
+  <script src="apath.js"></script>
+</body>
+</html>

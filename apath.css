@@ -1,0 +1,161 @@
+* {
+  font-family: monospace, sans-serif;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000;
+  --cell: #eee;
+  --wall: #111;
+  --start: green;
+  --end: red;
+  --visited: #3498db;
+  --path: gold;
+}
+
+body.dark {
+  --bg: #111;
+  --text: #fff;
+  --cell: #333;
+  --wall: #000;
+  --visited: #4444ff;
+  --path: gold;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  justify-content: center;
+}
+
+header {
+  margin-top: 15px;
+  width: 95%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--cell);
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  border-radius: 8px;
+
+  h3 {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  label {
+    margin-right: 20px;
+    display: flex;
+
+    p {
+      margin-left: 5px;
+      font-size: 13px;
+    }
+  }
+}
+
+.theme-toggle {
+  font-size: 14px;
+}
+
+.controls {
+  margin: 15px 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 110px;
+}
+
+.buttons {
+  margin: 15px 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#reset {
+  background-color: #f00;
+  color: #fff;
+}
+
+main#grid {
+  display: grid;
+  gap: 1px;
+  margin: 10px 0;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: var(--cell);
+  border: 1px solid #222;
+  transition: background 0.2s;
+}
+
+.wall {
+  background-color: var(--wall);
+}
+
+.start {
+  background-color: var(--start);
+}
+
+.end {
+  background-color: var(--end);
+}
+
+.visited {
+  background-color: var(--visited) !important;
+}
+
+.path {
+  background-color: var(--path) !important;
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: #0ff;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0cc;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+}
+
+.slider-control {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.slider-control label {
+  font-weight: bold;
+}
+
+#wallDensity {
+  width: 150px;
+}
